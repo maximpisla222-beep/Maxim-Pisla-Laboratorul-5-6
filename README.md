@@ -1,16 +1,45 @@
-# React + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicație React (Vite) pentru gestionarea sarcinilor: adăugare, vizualizare,
+marcare ca finalizată, ștergere.
 
-Currently, two official plugins are available:
+## Analiza structurii proiectului
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**1. Care este rolul folderului `src`?**
+Folderul `src` conține tot codul sursă al aplicației — componentele React,
+fișierele de stil și punctul de intrare (`main.jsx`). Este folderul în care
+se lucrează efectiv la funcționalitatea aplicației.
 
-## React Compiler
+**2. Ce reprezintă fișierul `App.jsx`?**
+Este componenta principală (rădăcină) a aplicației React. Aici este definită
+structura generală a interfeței și, de obicei, tot aici se gestionează starea
+principală a aplicației (de exemplu, lista de sarcini), care apoi este
+transmisă componentelor mai mici prin props.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**3. Ce informații sunt păstrate în `package.json`?**
+Conține metadatele proiectului (nume, versiune), lista de dependențe
+(bibliotecile folosite, ex: react, react-dom) și dependențele de dezvoltare
+(ex: vite), precum și scripturile disponibile (`npm run dev`, `npm run build`
+etc.).
 
-## Expanding the Oxlint configuration
+**4. Ce reprezintă folderul `node_modules`?**
+Este folderul în care sunt instalate fizic toate bibliotecile și
+dependențele proiectului, descărcate pe baza `package.json` la rularea
+`npm install`. Nu se urcă pe Git (este inclus în `.gitignore`), deoarece
+poate fi regenerat oricând cu `npm install`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Funcționalități implementate
+
+- adăugarea unei sarcini noi (nu se permite adăugarea unui câmp gol)
+- vizualizarea tuturor sarcinilor
+- marcarea unei sarcini ca finalizată (click pe text)
+- ștergerea unei sarcini
+- afișarea numărului total de sarcini și a celor finalizate
+- mesaj afișat când lista este goală
+
+## Rulare locală
+
+```bash
+npm install
+npm run dev
+```
