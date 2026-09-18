@@ -1,3 +1,5 @@
+//Componenta pentru formularul de adăugare a unei sarcini
+
 import { useState } from "react";
 
 function TaskForm({ onAddTask }) {
