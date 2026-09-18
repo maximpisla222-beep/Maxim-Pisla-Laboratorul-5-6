@@ -1,3 +1,4 @@
+ // Componenta principală - gestionează adăugarea, marcarea și ștergerea sarcinilor
 import { useState } from "react";
 import TaskForm from "./components/TaskForm";
 import Task from "./components/Task";
