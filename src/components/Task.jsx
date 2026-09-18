@@ -1,3 +1,4 @@
+ // Componenta pentru afișarea unei sarcini în listă și apăsă Enter.
 function Task({ task, onToggleComplete, onDeleteTask }) {
   return (
     <li className="task-item">
